@@ -3,7 +3,7 @@
     "windows": {
         "command": "build.cmd",
         "isShellCommand": true,
-        "showOutput": "always"        
+        "showOutput": "always"
     },
     "linux": {
         "command": "g++",

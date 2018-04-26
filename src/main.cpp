@@ -14,6 +14,6 @@ int main()
     // arrayInitializationTest();
 
     // 2. String tests
-
+    // cstringTest();
     return 0;
 }

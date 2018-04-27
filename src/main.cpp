@@ -2,6 +2,8 @@
 #include "00HelloWorld/HelloWorld.h"
 #include "04CompoundTypes/ArrayTest.h"
 #include "04CompoundTypes/StringTest.h"
+#include "04CompoundTypes/StructTest.h"
+
 using namespace std;
 
 int main()
@@ -15,5 +17,10 @@ int main()
 
     // 2. String tests
     // cstringTest();
+    // cppstringTest();
+
+    // 3. Struct tests
+    structTest();
+
     return 0;
 }

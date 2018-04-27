@@ -1,2 +1,3 @@
 
 void cstringTest();
+void cppstringTest();

@@ -10,4 +10,5 @@ cl.exe %compilerflags% ^
 ./src/00HelloWorld/HelloWorld.cpp ^
 ./src/04CompoundTypes/ArrayTest.cpp ^
 ./src/04CompoundTypes/StringTest.cpp ^
+./src/04CompoundTypes/StructTest.cpp ^
 /link %linkerflags%

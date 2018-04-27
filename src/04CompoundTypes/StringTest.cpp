@@ -1,5 +1,7 @@
-#include <iostream>
 #include "StringTest.h"
+#include <iostream>
+#include <string>
+#include <cstring>
 
 using namespace std;
 
@@ -34,16 +36,20 @@ void cstringTest()
 
     // // cstring input: cin.getline(str, size);
     // // -> read until it reachs the "size" limit or when it reads a new line character
-    // // -> the newline character entered will be discard (not leave it in input queue)
-    // // -> WARNING: only newline character will be discard, if you enter a string with length > size (parameter of cin.getline), the remain string will be left in input queue
-    // char numberString[5];
-    // char street[40];
-    // cout << "Enter 123456789:" << endl;
-    // cin.getline(numberString, 5); // If you enter "123" (length < 5) here, you can enter street after that. But if you enter "123456" (length >= 5), cin.getline(street, 40) will be skip because "56" is left in input queue
-    // cout << "You enterd: " << numberString << endl;
-    // cout << "Enter a street name:" << endl;
-    // cin.getline(street, 40);
-    // cout << "You enterd: " << street << endl;
+    // // -> the newline character entered will be discarded (not leave it in input queue)
+    // // -> WARNING: newline character will only be discarded if the entered line length < size
+    char numberString[5];
+    char street[40];
+    cout << "Enter 123456789:" << endl;
+    cin.getline(numberString, 5); // If you enter "123" (length < 5) here, you can enter street after that. But if you enter "123456" (length >= 5), cin.getline(street, 40) will be skip because newline character is left in input queue
+    cout << "You enterd: " << numberString << endl;
+    cout << "Enter a street name:" << endl;
+    cin.getline(street, 40);
+    cout << "You enterd: " << street << endl;
+    if (street[0] == '\0')
+    {
+        cout << "street is a null string" << endl;
+    }
 
     // // cstring input: cin.get(str, size);
     // // -> read until it reachs the "size" limit or when it reads a new line character
@@ -59,7 +65,7 @@ void cstringTest()
     // if (food[0] == '\0')
     // {
     //     cout << "The newline character is left in input queue. "<< endl;
-    //     cout << "Therefore, when \"cin.get(food, 40)\" is called, it will read the new line character and stop reading" << endl;
+    //     cout << "Therefore, when \"cin.get(food, 40)\" is called, it will read the new line character as an empty line and assign null string to food" << endl;
     //     cout << "-> food is empty string with food[0] == '\\0'" << endl;
     //     cout << "To avoid this issue, add \"cin.get()\" or \"cin.get(c)\" (char c) statement between them - it reads a single character even if it is a newline";
     // }
@@ -91,4 +97,27 @@ void cstringTest()
     // // NOTE: cin.getline(str, size) vs cin.get(str, size)
     // // If you use cin.get(str, size) to read a line, you can check if it read the whole line or just stopped because the length of the line (input) > size by reading the next character and check if it is a newline or not
     // // You can't do it with cin.getline() because it discards the newline character after reading.
+}
+
+void cppstringTest()
+{
+    char cstr[9];
+    string str;
+    cout << "cstr           : \"" << cstr << "\"" << endl;
+    cout << "str            : \"" << str << "\"" << endl;
+    cout << "sizeof(char)   : " << sizeof(char)  << " (bytes)" << endl;
+    cout << "sizeof(str)    : " << sizeof(cstr)  << " (bytes)" << endl; // 9
+    cout << "strlen(cstr)   : " << strlen(cstr)  << " (bytes)" << endl; // may not 9 -> strlen(cstr) count until it reachs null character
+    cout << "str.length()   : " << str.length()  << " (bytes)" << endl; // 0 str.length() is a synonym for str.size().
+    cout << "str.size()     : " << str.size()    << " (bytes)" << endl; // 0 the same as str.length()
+
+    char cname[40];
+    string name;
+    cout << "Enter your name:" << endl;
+    cin.getline(cname, 40);
+    cout << "You entered: " << cname << " - " << strlen(cname) << " (bytes)" << endl;
+    cout << "Enter your name:" << endl;
+    char delimitation = '\n';
+    std::getline(cin, name, delimitation); // delimitation is optional, default is '\n'
+    cout << "You entered: " << name << " - " << name.size() << " (bytes)" << endl;
 }

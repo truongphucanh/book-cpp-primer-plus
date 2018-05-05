@@ -71,6 +71,6 @@ void structTest()
 {
     // structInitializationTest();
     // structAssigmentTest();
-    structSizeTest();
+    // structSizeTest();
     // structBitFieldTest();
 }

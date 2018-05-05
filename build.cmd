@@ -11,4 +11,5 @@ cl.exe %compilerflags% ^
 ./src/04CompoundTypes/ArrayTest.cpp ^
 ./src/04CompoundTypes/StringTest.cpp ^
 ./src/04CompoundTypes/StructTest.cpp ^
+./src/04CompoundTypes/UnionTest.cpp ^
 /link %linkerflags%

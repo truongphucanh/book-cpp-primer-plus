@@ -1,0 +1,2 @@
+void unionTest();
+void anonymousUnionTest();

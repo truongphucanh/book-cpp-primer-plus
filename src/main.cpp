@@ -3,6 +3,7 @@
 #include "04CompoundTypes/ArrayTest.h"
 #include "04CompoundTypes/StringTest.h"
 #include "04CompoundTypes/StructTest.h"
+#include "04CompoundTypes/UnionTest.h"
 
 using namespace std;
 
@@ -20,7 +21,11 @@ int main()
     // cppstringTest();
 
     // 3. Struct tests
-    structTest();
+    // structTest();
+
+    // 4. Union
+    // unionTest();
+    anonymousUnionTest();
 
     return 0;
 }

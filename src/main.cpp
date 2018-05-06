@@ -4,6 +4,7 @@
 #include "04CompoundTypes/StringTest.h"
 #include "04CompoundTypes/StructTest.h"
 #include "04CompoundTypes/UnionTest.h"
+#include "04CompoundTypes/EnumTest.h"
 
 using namespace std;
 
@@ -25,7 +26,10 @@ int main()
 
     // 4. Union
     // unionTest();
-    anonymousUnionTest();
+    // anonymousUnionTest();
 
+    // 5. Enum
+    enumTest();
+    enumRangeTest();
     return 0;
 }
